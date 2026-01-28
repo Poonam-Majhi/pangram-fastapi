@@ -45,7 +45,7 @@ def test_post_pangram():
     r = client.post("/ispangram", json={"text": "Sphinx of black quartz, judge my vow"})
     assert r.status_code == 200
     data = r.json()
-    assert data["isPangran"] is True
+    assert data["isPangram"] is True
     assert data["missing"] == []
 
 def test_healthz():
