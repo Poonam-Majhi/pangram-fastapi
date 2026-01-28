@@ -18,12 +18,18 @@ A RESTful web service built with FastAPI to check if a given string is a pangram
 2. Navigate to the directory: `cd pangram-fastapi`
 3. Create & activate a virtual environment:
    - `python -m venv.venv`
-   ### Windows
+4. Enter the interpreter:
+   - `Python extension`
+5. Select requirements.txt.
+   
+In Terminal(cmd)
+   **#Windows**
    `.venv/Scripts/activate.bat`
-4. Install dependencies: `pip install -r requirements.txt` 
+
+6. Install dependencies: `pip install -r requirements.txt` 
 
 ## Usage
-1. Run the app: `uvicorn app.main:app --reload`(In cmd)
+1. Run the app: `uvicorn app.main:app --reload`
 2. API Endpoint: 
 - **GET**: `/check_pangram?text=your_string` (e.g., `http://127.0.0.1:8000/check_pangram text=The%20quick%20brown%20fox`)
 - **POST**: `/check_pangram` with JSON: `{"text": "Sphinx of black quartz, judge my vow"}`
