@@ -10,8 +10,8 @@ This document explains how to deploy the FastAPI app to Azure. The below are the
 
 2. Deployment Method/Tools:
 
-Use GitHub Actions for free CI/CD (integrated with repo).
-Tools: Azure CLI, VS Code Azure extension, or Azure Portal.
+- Use GitHub Actions for free CI/CD (integrated with repo).
+- Tools: Azure CLI, VS Code Azure extension, or Azure Portal.
 
 ## Prerequisites(before deploying)
 
@@ -38,7 +38,7 @@ Tools: Azure CLI, VS Code Azure extension, or Azure Portal.
 `Step 3: Set Up CI/CD with GitHub Actions:`
 - In repo, create a file .github/workflows/deploy.yml with the following content:
 
-```name: Deploy to Azure
+`name: Deploy to Azure
 on:
   push:
     branches: [ main ]
@@ -57,8 +57,8 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'your-app-name'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}```
-        
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}`
+
 - Get the publish profile from Azure Portal (App Service → Get Publish Profile) and add it as a GitHub secret.
 - This workflow triggers on pushes/PRs to main, installs dependencies, runs tests, and deploys.
 
