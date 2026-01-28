@@ -38,7 +38,7 @@ This document explains how to deploy the FastAPI app to Azure. The below are the
 `Step 3: Set Up CI/CD with GitHub Actions:`
 - In repo, create a file .github/workflows/deploy.yml with the following content:
 
-`name: Deploy to Azure
+```name: Deploy to Azure
 on:
   push:
     branches: [ main ]
@@ -57,7 +57,7 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'your-app-name'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}`
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
 - Get the publish profile from Azure Portal (App Service → Get Publish Profile) and add it as a GitHub secret.
 - This workflow triggers on pushes/PRs to main, installs dependencies, runs tests, and deploys.
@@ -74,8 +74,3 @@ jobs:
 - Trigger Deployment: Push changes to the main branch in GitHub repo. GitHub Actions will automatically build, test, and deploy.
 - Monitor Deployment: Check the Actions tab in GitHub for logs. If issues arise, review Azure App Service logs in the portal (App Service > Logs > Enable Application Logging).
 - Access the App: Visit https://your-app-name.azurewebsites.net/check_pangram (e.g., via GET: ?text=The%20quick%20brown%20fox or POST with JSON).
-
-## Environment Used
-OS: Windows 10.
-Python Version: 3.9+.
-IDE: VS Code.

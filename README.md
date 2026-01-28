@@ -18,7 +18,7 @@ A RESTful web service built with FastAPI to check if a given string is a pangram
 2. Navigate to the directory: `cd pangram-fastapi`
 3. Create & activate a virtual environment:
    - `python -m venv.venv`
-   #Windows
+   ### Windows
    `.venv/Scripts/activate.bat`
 4. Install dependencies: `pip install -r requirements.txt` 
 
@@ -41,3 +41,8 @@ A RESTful web service built with FastAPI to check if a given string is a pangram
 
 ## Testing
 Run tests: `python -m pytest -q`
+
+## Environment Used
+`OS: Windows 10.`
+`Python Version: 3.9+.`
+`IDE: VS Code.`
